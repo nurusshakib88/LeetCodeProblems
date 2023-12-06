@@ -1,0 +1,25 @@
+nums = [1,1,1,2,2,5,8,8,9]
+
+var removeDuplicates = function(nums) {
+   
+    let k = 0; 
+
+    for (let i = 0; i < nums.length; i++) {
+        let duplicate = false;
+
+        for (let j = 0; j < k; j++) {
+            if (nums[i] === nums[j]) {
+                duplicate = true;
+                break;
+            }
+        }
+        if (!duplicate) {
+            nums[k] = nums[i];
+            k++;
+        }
+    }
+
+    return k;
+};
+
+console.log(nums.slice(removeDuplicates(nums)))
